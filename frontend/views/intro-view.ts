@@ -11,6 +11,6 @@ export class IntroView extends LitElement {
     `;
   }
   render() {
-    return html` <div>Hello</div> `;
+    return html` <div>Testing</div> `;
   }
 }

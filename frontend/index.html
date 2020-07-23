@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Recipes</title>
     <style>
+
       body {
         margin: 0;
-        width: 100vw;
-        height: 100vh;
+        height: 100%;
       }
 
       #outlet {
@@ -16,7 +16,12 @@
       }
     </style>
     <custom-style>
-      <style include="lumo-color lumo-typography"></style>
+      <style include="lumo-color lumo-typography">
+        html {
+          height: 100%;
+          --lumo-base-color: var(--lumo-shade-5pct);
+        }
+      </style>
     </custom-style>
     <!-- index.ts is included here automatically (either by the dev server or during the build) -->
   </head>
