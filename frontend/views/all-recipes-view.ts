@@ -9,8 +9,8 @@ import "../all-recipes";
 import "../code-viewer";
 import RecipeInfo from "../generated/com/vaadin/recipes/data/RecipeInfo";
 
-@customElement("main-view")
-export class MainView extends LitElement {
+@customElement("all-recipes-view")
+export class AllRecipesView extends LitElement {
   @property({ type: Object })
   recipe: RecipeInfo = { howDoI: "", sourceFiles: [], url: "" };
 
@@ -89,7 +89,7 @@ export class MainView extends LitElement {
 
   render() {
     return html`
-      <!--<vaadin-app-layout primary-section="drawer">
+      <vaadin-app-layout primary-section="drawer">
         <vaadin-drawer-toggle
           slot="navbar touch-optimized"
         ></vaadin-drawer-toggle>
@@ -99,34 +99,34 @@ export class MainView extends LitElement {
           <div class="examplewrapper"><slot></slot></div>
           <code-viewer .files=${this.recipe.sourceFiles}></code-viewer>
         </vaadin-split-layout>
-      </vaadin-app-layout>-->
+      </vaadin-app-layout>
       
-      <div class="main">
-        <header>
-          <div class="wrap">
-              <h1 class="app-title">Cookbook</h1>
-          </div>   
-        </header>
-        <div class="content">
-          <div class="wrap">
-            <div class="all-recipes">
-                <div class="side-bar">
-                    <h3>Filter by tags</h3>
-                    <vaadin-checkbox>Ui</vaadin-checkbox>
-                    <vaadin-checkbox>Data</vaadin-checkbox>
-                    <vaadin-checkbox>Themes</vaadin-checkbox>
-                    <vaadin-checkbox>Tools</vaadin-checkbox>
-                    <vaadin-checkbox>Miscellaneous</vaadin-checkbox>
-                    <vaadin-checkbox>Web components</vaadin-checkbox>
-                    <vaadin-checkbox>Official Vaadin</vaadin-checkbox>
-                </div>
-                <div class="main-content">
-                    <all-recipes></all-recipes>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!--<div class="main">-->
+        <!--<header>-->
+          <!--<div class="wrap">-->
+              <!--<h1 class="app-title">Cookbook</h1>-->
+          <!--</div>   -->
+        <!--</header>-->
+        <!--<div class="content">-->
+          <!--<div class="wrap">-->
+            <!--<div class="all-recipes">-->
+                <!--<div class="side-bar">-->
+                    <!--<h3>Filter by tags</h3>-->
+                    <!--<vaadin-checkbox>Ui</vaadin-checkbox>-->
+                    <!--<vaadin-checkbox>Data</vaadin-checkbox>-->
+                    <!--<vaadin-checkbox>Themes</vaadin-checkbox>-->
+                    <!--<vaadin-checkbox>Tools</vaadin-checkbox>-->
+                    <!--<vaadin-checkbox>Miscellaneous</vaadin-checkbox>-->
+                    <!--<vaadin-checkbox>Web components</vaadin-checkbox>-->
+                    <!--<vaadin-checkbox>Official Vaadin</vaadin-checkbox>-->
+                <!--</div>-->
+                <!--<div class="main-content">-->
+                    <!--<all-recipes></all-recipes>-->
+                <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
     `;
   }
 
