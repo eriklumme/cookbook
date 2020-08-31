@@ -1,4 +1,4 @@
-import { AppLayoutElement } from "@vaadin/vaadin-app-layout/src/vaadin-app-layout";
+// import { AppLayoutElement } from "@vaadin/vaadin-app-layout/src/vaadin-app-layout";
 import "@vaadin/vaadin-app-layout/theme/lumo/vaadin-app-layout";
 import "@vaadin/vaadin-app-layout/vaadin-drawer-toggle";
 import "@vaadin/vaadin-checkbox/vaadin-checkbox";
@@ -89,64 +89,53 @@ export class AllRecipesView extends LitElement {
 
   render() {
     return html`
-      <vaadin-app-layout primary-section="drawer">
-        <vaadin-drawer-toggle
-          slot="navbar touch-optimized"
-        ></vaadin-drawer-toggle>
-        <span slot="navbar">${this.recipe.howDoI}</span>
-        <all-recipes slot="drawer"></all-recipes>
-        <vaadin-split-layout class="layout" orientation="vertical">
-          <div class="examplewrapper"><slot></slot></div>
-          <code-viewer .files=${this.recipe.sourceFiles}></code-viewer>
-        </vaadin-split-layout>
-      </vaadin-app-layout>
-      
-      <!--<div class="main">-->
-        <!--<header>-->
-          <!--<div class="wrap">-->
-              <!--<h1 class="app-title">Cookbook</h1>-->
-          <!--</div>   -->
-        <!--</header>-->
-        <!--<div class="content">-->
-          <!--<div class="wrap">-->
-            <!--<div class="all-recipes">-->
-                <!--<div class="side-bar">-->
-                    <!--<h3>Filter by tags</h3>-->
-                    <!--<vaadin-checkbox>Ui</vaadin-checkbox>-->
-                    <!--<vaadin-checkbox>Data</vaadin-checkbox>-->
-                    <!--<vaadin-checkbox>Themes</vaadin-checkbox>-->
-                    <!--<vaadin-checkbox>Tools</vaadin-checkbox>-->
-                    <!--<vaadin-checkbox>Miscellaneous</vaadin-checkbox>-->
-                    <!--<vaadin-checkbox>Web components</vaadin-checkbox>-->
-                    <!--<vaadin-checkbox>Official Vaadin</vaadin-checkbox>-->
-                <!--</div>-->
-                <!--<div class="main-content">-->
-                    <!--<all-recipes></all-recipes>-->
-                <!--</div>-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
+      <div class="main">
+        <header>
+          <div class="wrap">
+              <h1 class="app-title">Cookbook</h1>
+          </div>   
+        </header>
+        <div class="content">
+          <div class="wrap">
+            <div class="all-recipes">
+                <div class="side-bar">
+                    <h3>Filter by tags</h3>
+                    <vaadin-checkbox>Ui</vaadin-checkbox>
+                    <vaadin-checkbox>Data</vaadin-checkbox>
+                    <vaadin-checkbox>Themes</vaadin-checkbox>
+                    <vaadin-checkbox>Tools</vaadin-checkbox>
+                    <vaadin-checkbox>Miscellaneous</vaadin-checkbox>
+                    <vaadin-checkbox>Web components</vaadin-checkbox>
+                    <vaadin-checkbox>Official Vaadin</vaadin-checkbox>
+                </div>
+                <div class="main-content">
+                    <all-recipes></all-recipes>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
     `;
   }
 
-  private _routerLocationChanged() {
-    AppLayoutElement.dispatchCloseOverlayDrawerEvent();
-  }
+  // private _routerLocationChanged() {
+  //   AppLayoutElement.dispatchCloseOverlayDrawerEvent();
+  // }
+  //
+  // connectedCallback() {
+  //   super.connectedCallback();
+  //   window.addEventListener(
+  //     "vaadin-router-location-changed",
+  //     this._routerLocationChanged
+  //   );
+  // }
+  //
+  // disconnectedCallback() {
+  //   super.disconnectedCallback();
+  //   this.removeEventListener(
+  //     "vaadin-router-location-changed",
+  //     this._routerLocationChanged
+  //   );
+  // }
 
-  connectedCallback() {
-    super.connectedCallback();
-    window.addEventListener(
-      "vaadin-router-location-changed",
-      this._routerLocationChanged
-    );
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    this.removeEventListener(
-      "vaadin-router-location-changed",
-      this._routerLocationChanged
-    );
-  }
 }
